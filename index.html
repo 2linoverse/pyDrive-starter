@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Setup Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .container {
+            background: #161b22;
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        h1, h2, h3 {
+            color: #f0f6fc;
+        }
+        .step {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #21262d;
+        }
+        .step:last-child {
+            border-bottom: none;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 6px;
+            display: block;
+            margin: 1rem 0;
+            border: 1px solid #30363d;
+        }
+        code {
+            background: rgba(110, 118, 129, 0.4);
+            color: #e6edf3;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            font-size: 85%;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li:before {
+            content: "• ";
+            color: #58a6ff;
+            font-weight: bold;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Drive Setup Guide</h1>
+        
+        <div class="step">
+            <h2>Step 1: Setup Google Cloud Console</h2>
+            <video controls>
+                <source src="01_setup_google_cloud_console.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <ul>
+                <li>Create a new project</li>
+                <li>Select the project</li>
+                <li>Enable Google Drive API</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Step 2: Setup OAuth Account</h2>
+            <video controls>
+                <source src="02_setup_oauth_account.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <ul>
+                <li>Go to APIs and Services &rarr; Credentials</li>
+                <li>Create new OAuth 2.0 credentials</li>
+                <li>Configure OAuth consent</li>
+                <li>Go to Audience &rarr; set your email as a test user</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Step 3: Setup OAuth Credential</h2>
+            <video controls>
+                <source src="03_setup_oauth_credential.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>    
+            <ul>
+                <li>Go to APIs and Service &rarr; Credentials</li>
+                <li>Create OAuth 2.0 credentials</li>
+                <li>Select Web Application</li>
+                <li>Put this in authorized redirect URL: <code>http://localhost:8080/</code></li>
+                <li>Create &rarr; download credentials</li>
+                <li>Save to your folder</li>
+                <li>Rename as <code>client_secret.json</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Step 4: Setup Local Python Environment</h2>
+            <video controls>
+                <source src="04_get_refresh_token.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Download the files to a folder on your computer</p>
+            <ul>
+                <li>Create a python virtual environment: <code>python -m venv .venv</code></li>
+                <li>Activate it: <code>source .venv/bin/activate</code></li>
+                <li>Install requirements: <code>pip install -r requirements.txt</code></li>
+                <li>Get refresh token:
+                    <ul>
+                        <li>Run <code>python get_refresh_token.py</code> on your local machine</li>
+                        <li>Copy the refresh token in the CLI</li>
+                        <li><code>Ctrl + Shift + C</code> to copy selected text in shell</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Step 5: Replit Project Setup</h2>
+            <video controls>
+                <source src="05_replit_run.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <ul>
+                <li>Create a new empty Replit project and bring files into project</li>
+                <li>Set environment secrets:
+                    <ul>
+                        <li>Set <code>REFRESH_TOKEN</code> secret environment variable</li>
+                        <li>Get <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> from <code>client_secret.json</code></li>
+                    </ul>
+                </li>
+                <li>Make sure requirements are installed first</li>
+                <li>Run <code>python google_drive.py</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Step 6: Credits</h2>
+            <h3>RESOURCES:</h3>
+            <ul>
+                <li>Google Drive API Python Quickstart: <a href="https://developers.google.com/workspace/drive/api/quickstart/python" target="_blank">Link</a></li>
+                <li>Google Drive API Reference Docs: <a href="https://developers.google.com/workspace/drive/api/reference/rest/v3" target="_blank">Link</a></li>
+                <li>Google Python Samples: <a href="https://github.com/googleworkspace/python-samples/blob/main/drive/quickstart/quickstart.py" target="_blank">Link</a></li>
+            </ul>
+
+            <p>Checkout <a href="https://www.youtube.com/@thecoderworld/videos" target="_blank">The Coder World</a> for Windows/Linux PC tutorials.</p>
+            
+            <p>And lastly checkout <a href="https://www.youtube.com/watch?v=6bzzpda63H0" target="_blank">[MVP] Jie Jenn's tutorials on Google Cloud setup</a> and his whole <a href="https://www.youtube.com/watch?v=9K2P2bWEd90&list=PL3JVwFmb_BnTamTxXbmlwpspYdpmaHdbz" target="_blank">Google Drive API tutorials playlist!</a></p>
+            
+            <p style="margin-top: 2rem; font-style: italic;">
+                As always we are standing on the shoulders of giants.
+            </p>
+            <p>Thanks for watching! ... or rather, for reading/following along with this tutorial.</p>
+            <p>--Lincoln</p>
+        </div>
+    </div>
+</body>
+</html>
