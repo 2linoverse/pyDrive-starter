@@ -57,3 +57,32 @@ set environment secrets
 - run python google_drive.py
 
 [] means it worked
+
+
+
+## RESOURCES:
+
+google drive api python quickstart:
+https://developers.google.com/workspace/drive/api/quickstart/python
+
+google drive api reference docs:
+https://developers.google.com/workspace/drive/api/reference/rest/v3
+
+google python samples:
+https://github.com/googleworkspace/python-samples/blob/main/drive/quickstart/quickstart.py
+
+
+checkout the coder world for windows/linux pc tutorials:
+https://www.youtube.com/@thecoderworld/videos
+
+
+and lastly checkout [MVP] Jie Jenn's tutorials on Google Cloud setup:
+https://www.youtube.com/watch?v=6bzzpda63H0
+
+and his whole Google Drive Api tutorials playlist!
+https://www.youtube.com/watch?v=9K2P2bWEd90&list=PL3JVwFmb_BnTamTxXbmlwpspYdpmaHdbz
+
+
+As always we are standing on the shoulders of giants
+
+thanks for watching! ... or rather, for reading/following along with this tutorial
