@@ -4,9 +4,6 @@ Setup Google Drive API on a Remote Server With Python
 ## step 1
 setup google cloud console
 
-<video src="01_setup_google_cloud_console.mp4" controls width="640" height="360">
-  Your browser does not support the video tag.
-</video>
 
 - create a new project
 - select the project
