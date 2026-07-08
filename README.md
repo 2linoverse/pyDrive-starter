@@ -1,6 +1,9 @@
 # pyDrive-starter
 Setup Google Drive API on a Remote Server With Python
 
+Pages link:
+https://2linoverse.github.io/pyDrive-starter/
+
 ## step 1
 setup google cloud console
 
